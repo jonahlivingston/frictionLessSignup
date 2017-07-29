@@ -22,4 +22,6 @@ Thumbs.db
 .idea
 .vscode
 
+public/bundle.js
+public/bundle.js.map
 
