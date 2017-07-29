@@ -1,19 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-import App from './App';
+import Create from './Create';
+import Preview from './Preview';
+import Export from './Export';
+import { cloneQuestions } from './Preview/PreviewActionCreators'
+import store from './store';
 
-const Routes = () => (
+const generatePreview = () => {
+  store.dispatch(cloneQuestions(store.getState().create.questions))
+};
+
+const Routes = (props) => (
   <Router history={browserHistory}>
-    <Route path="/">
-      <IndexRoute component={App} />
-      <Route path="*" component={App} />
-    </Route>
+    <Route path='/' component = {Create} />
+    <Route path='/preview' onEnter = {generatePreview} component={Preview} />
+    <Route path='/export' component={Export} />
   </Router>
 );
 
-const mapStateToProps = null;
-
-const mapDispatchToProps = null;
-
-export default connect(mapStateToProps, mapDispatchToProps)(Routes);
+export default connect(null, null)(Routes);
