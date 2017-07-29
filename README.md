@@ -2,7 +2,7 @@ Hi!
 
 I encourage you to check out this tool which allows you to create and preview dynamic forms.
 
-It is most easily viewed at ____
+It is most easily viewed used at https://dynamicformgenerator.herokuapp.com/
 
 However if for whatever reason you wish to host it off your own machine here are the necessary steps:
 
