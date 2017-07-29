@@ -2,7 +2,15 @@ import { UPDATE_QUESTION, ADD_QUESTION, ADD_SUBINPUT, DELETE_QUESTION, } from '.
 import { deleteNodeAtPath, addSubinput, findQuestionAndUpdate } from './utils';
 
 //the default state of the redux store should pull from local storeage if available and if not default to an empty array and index 0
-const reducer = (state = {questions: JSON.parse(window.localStorage.getItem("createState")).questions||[], index: JSON.parse(window.localStorage.getItem("createState")).index || 0}, action) => {
+let defaultState;
+if(JSON.parse(window.localStorage.getItem("createState"))){
+  defaultState = JSON.parse(window.localStorage.getItem("createState"));
+}
+else{
+  defaultState = {questions: [], index: 0}
+}
+
+const reducer = (state = defaultState, action) => {
   // Parsing then stringifying is one of the most effecient way to deep clone an object
   // This is a potential bottleneck, however it is not currently slowing down performance so I would not want to preoptimize
   // If this did slow down performance I would look into other potential methods like immutable js or somehow flattening state

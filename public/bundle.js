@@ -16119,8 +16119,15 @@ var _CreateActionCreators = __webpack_require__(85);
 var _utils = __webpack_require__(332);
 
 //the default state of the redux store should pull from local storeage if available and if not default to an empty array and index 0
+var defaultState = void 0;
+if (JSON.parse(window.localStorage.getItem("createState"))) {
+  defaultState = JSON.parse(window.localStorage.getItem("createState"));
+} else {
+  defaultState = { questions: [], index: 0 };
+}
+
 var reducer = function reducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { questions: JSON.parse(window.localStorage.getItem("createState")).questions || [], index: JSON.parse(window.localStorage.getItem("createState")).index || 0 };
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
   var action = arguments[1];
 
   // Parsing then stringifying is one of the most effecient way to deep clone an object
