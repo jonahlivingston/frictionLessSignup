@@ -10,7 +10,7 @@ However if for whatever reason you wish to host it off your own machine here are
 
 2. Go into repository and install dependencies (npm install)
 
-3. To run tests use command 'npm test'
+3. While due to time constraints there is not full test coverage there are some utility unit tests. To run tests use command 'npm test'
 
 4. To view the program in your browser a) in one terminal window enter the project directory and do 'npm run build' which uses webpack to create the bundle b) In a different terminal window go into the project directory and then do 'npm start'
 
