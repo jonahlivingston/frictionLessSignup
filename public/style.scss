@@ -192,6 +192,7 @@ div{
 }
 
 textArea{
+  @extend .border;
   margin-top: 60px;
   margin-left: 20px;
   padding: 10px;
