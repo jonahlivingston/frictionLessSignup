@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import CreateReducer from './Create/CreateReducer';
-import PreviewReducer from './Preview/PreviewReducer';
+import CaroselReducer from './Carosel/CaroselReducer';
 
 const rootReducer = combineReducers({
-  create: CreateReducer,
-  preview: PreviewReducer,
+  carosel: CaroselReducer,
 });
 
 export default rootReducer;
