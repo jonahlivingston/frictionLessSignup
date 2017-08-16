@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
+const routes = require('./routes');
 const app = express();
 
 
@@ -37,7 +38,7 @@ app.get('*', (req, res) => {
 });
 
 // Reroute to /api
-
+app.use('/api', routes);
 // Sync database then start listening if we are running the file directly
 // Needed to remove errors during http testing
 if (module === require.main) {

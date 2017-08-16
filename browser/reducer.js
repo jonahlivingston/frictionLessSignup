@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import CaroselReducer from './Carosel/CaroselReducer';
+import SignupFormReducer from './SignupForm/SignupFormReducer';
 
 const rootReducer = combineReducers({
-  carosel: CaroselReducer,
+  user: SignupFormReducer,
 });
 
 export default rootReducer;
